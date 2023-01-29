@@ -1,300 +1,128 @@
-﻿/*Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы 
- каждой строки двумерного массива.
- Например, задан массив:
- 1 4 7 2
- 5 9 2 3
- 8 4 2 4
- В итоге получается вот такой массив:
- 7 4 2 1
- 9 5 3 2
-8 4 4 2  
+﻿/*Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
 
-void OrderArrayLines(int[,] array)
+m = 3, n = 4.
+
+0,5 7 -2 -0,2
+
+1 -3,3 8 -9,9
+
+8 7,8 -7,1 9  */
+/*
+
+void CreatArray(double[,] array)
 {
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-      for (int k = 0; k < array.GetLength(1) - 1; k++)
-      {
-        if (array[i, k] < array[i, k + 1])
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-          int temp = array[i, k + 1];
-          array[i, k + 1] = array[i, k];
-          array[i, k] = temp;
+            array[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
         }
-      }
     }
-  }
 }
 
-int InputNumbers(string input)
+void ShowArray(double[,] array)
 {
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-int range = InputNumbers("Введите диапазон: от 1 до ");
-void CreateArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-      array[i, j] = new Random().Next(range);
-    }
-  }
-}
-
-void WriteArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write(array[i, j] + " ");
-    }
-    Console.WriteLine();
-  }
-}
-Console.WriteLine($"\nВведите размер массива m x n и диапазон случайных значений:");
-int m = InputNumbers("Введите m: ");
-int n = InputNumbers("Введите n: ");
-
-
-int[,] array = new int[m, n];
-CreateArray(array);
-WriteArray(array);
-
-Console.WriteLine($"\nОтсортированный массив: ");
-OrderArrayLines(array);
-WriteArray(array);   */
-
-
- /*Задача 56: Задайте прямоугольный двумерный массив. Напишите программу, 
- которая будет находить строку с наименьшей суммой элементов.
-
- Например, задан массив:
-
- 1 4 7 2
- 5 9 2 3
- 8 4 2 4
- 5 2 6 7
-
- Программа считает сумму элементов в каждой строке и выдаёт номер строки с
-  наименьшей суммой элементов: 1 строка */
-
-/*
-Console.WriteLine($"\nВведите размер массива m x n и диапазон случайных значений:");
-int m = InputNumbers("Введите m: ");
-int n = InputNumbers("Введите n: ");
-int range = InputNumbers("Введите диапазон: от 1 до ");
-
-int[,] array = new int[m, n];
-CreateArray(array);
-WriteArray(array);
-
-int minSumLine = 0;
-int sumLine = SumLineElements(array, 0);
-for (int i = 1; i < array.GetLength(0); i++)
-{
-  int tempSumLine = SumLineElements(array, i);
-  if (sumLine > tempSumLine)
-  {
-    sumLine = tempSumLine;
-    minSumLine = i;
-  }
-}
-
-Console.WriteLine($"\n{minSumLine+1} - строкa с наименьшей суммой ({sumLine}) элементов ");
-
-
-int SumLineElements(int[,] array, int i)
-{
-  int sumLine = array[i,0];
-  for (int j = 1; j < array.GetLength(1); j++)
-  {
-    sumLine += array[i,j];
-  }
-  return sumLine;
-}
-
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-
-void CreateArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      array[i, j] = new Random().Next(range);
-    }
-  }
-}
-
-void WriteArray (int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write(array[i,j] + " ");
-    }
-    Console.WriteLine();
-  }
-} */
-// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить 
-// произведение двух матриц.
-/*
-Console.WriteLine($"\nВведите размеры матриц и диапазон случайных значений:");
-int m = InputNumbers("Введите число строк 1-й матрицы: ");
-int n = InputNumbers("Введите число столбцов 1-й матрицы (и строк 2-й): ");
-int p = InputNumbers("Введите число столбцов 2-й матрицы: ");
-int range = InputNumbers("Введите диапазон случайных чисел: от 1 до ");
-
-int[,] firstMartrix = new int[m, n];
-CreateArray(firstMartrix);
-Console.WriteLine($"\nПервая матрица:");
-WriteArray(firstMartrix);
-
-int[,] secomdMartrix = new int[n, p];
-CreateArray(secomdMartrix);
-Console.WriteLine($"\nВторая матрица:");
-WriteArray(secomdMartrix);
-
-int[,] resultMatrix = new int[m,p];
-
-MultiplyMatrix(firstMartrix, secomdMartrix, resultMatrix);
-Console.WriteLine($"\nПроизведение первой и второй матриц:");
-WriteArray(resultMatrix);
-
-void MultiplyMatrix(int[,] firstMartrix, int[,] secomdMartrix, int[,] resultMatrix)
-{
-  for (int i = 0; i < resultMatrix.GetLength(0); i++)
-  {
-    for (int j = 0; j < resultMatrix.GetLength(1); j++)
-    {
-      int sum = 0;
-      for (int k = 0; k < firstMartrix.GetLength(1); k++)
-      {
-        sum += firstMartrix[i,k] * secomdMartrix[k,j];
-      }
-      resultMatrix[i,j] = sum;
-    }
-  }
-}
-
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-
-void CreateArray(int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      array[i, j] = new Random().Next(range);
-    }
-  }
-}
-
-void WriteArray (int[,] array)
-{
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
-    {
-      Console.Write(array[i,j] + " ");
-    }
-    Console.WriteLine();
-  }
-} */
-// Задача 60. ...Сформируйте трёхмерный массив из 
-// неповторяющихся двузначных чисел. Напишите программу, 
-// которая будет построчно выводить массив, добавляя индексы каждого элемента.
-// Массив размером 2 x 2 x 2
-// 66(0,0,0) 25(0,1,0)
-// 34(1,0,0) 41(1,1,0)
-// 27(0,0,1) 90(0,1,1)
-// 26(1,0,1) 55(1,1,1)
-/*
-
-Console.WriteLine($"\nВведите размер массива X x Y x Z:");
-int x = InputNumbers("Введите X: ");
-int y = InputNumbers("Введите Y: ");
-int z = InputNumbers("Введите Z: ");
-Console.WriteLine($"");
-
-int[,,] array3D = new int[x, y, z];
-CreateArray(array3D);
-WriteArray(array3D);
-
-int InputNumbers(string input)
-{
-  Console.Write(input);
-  int output = Convert.ToInt32(Console.ReadLine());
-  return output;
-}
-
-void WriteArray (int[,,] array3D)
-{
-  for (int i = 0; i < array3D.GetLength(0); i++)
-  {
-    for (int j = 0; j < array3D.GetLength(1); j++)
-    {
-      Console.Write($"X({i}) Y({j}) ");
-      for (int k = 0; k < array3D.GetLength(2); k++)
-      {
-        Console.Write( $"Z({k})={array3D[i,j,k]}; ");
-      }
-      Console.WriteLine();
-    }
-    Console.WriteLine();
-  }
-}
-
-void CreateArray(int[,,] array3D)
-{
-  int[] temp = new int[array3D.GetLength(0) * array3D.GetLength(1) * array3D.GetLength(2)];
-  int  number;
-  for (int i = 0; i < temp.GetLength(0); i++)
-  {
-    temp[i] = new Random().Next(10, 100);
-    number = temp[i];
-    if (i >= 1)
-    {
-      for (int j = 0; j < i; j++)
-      {
-        while (temp[i] == temp[j])
+        Console.Write("[ ");
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-          temp[i] = new Random().Next(10, 100);
-          j = 0;
-          number = temp[i];
+            Console.Write(array[i, j] + " ");
         }
-          number = temp[i];
-      }
+        Console.Write("]");
+        Console.WriteLine("");
     }
-  }
-  int count = 0; 
-  for (int x = 0; x < array3D.GetLength(0); x++)
-  {
-    for (int y = 0; y < array3D.GetLength(1); y++)
-    {
-      for (int z = 0; z < array3D.GetLength(2); z++)
-      {
-        array3D[x, y, z] = temp[count];
-        count++;
-      }
-    }
-  }
 }
+Console.WriteLine("введите количество строк");
+int rows = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("введите количество столбцов");
+int cols = Convert.ToInt32(Console.ReadLine());
+double[,] array = new double[rows, cols];
+CreatArray(array);
+ShowArray(array);
 */
+
+/*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+Например, задан массив:
+
+1 4 7 2
+
+5 9 2 3
+
+8 4 2 4
+
+1 7 -> числа с такими индексами в массиве нет */
+
+/*
+Console.WriteLine("Введите размер строка");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите размер столбца");
+Console.WriteLine();
+int n = Convert.ToInt32(Console.ReadLine());
+int[,] array = new int[m, n];
+ 
+for (int i = 0; i < array.GetLength(0); i++) 
+{
+    for (int j = 0; j < array.GetLength(1); j++)
+        array [i, j] = Convert.ToInt32(new Random().Next(0,21));  
+}
+ 
+for (int i = 0; i < array.GetLength(0); i++) 
+{
+    for (int j = 0; j < array.GetLength(1); j++)
+        Console.Write(array[i,j] + "\t  ");
+        Console.WriteLine();
+}
+ 
+ Console.WriteLine("Введите координаты");
+ int a = Convert.ToInt32(Console.ReadLine());
+ int b = Convert.ToInt32(Console.ReadLine());
+ if (a>m && b>n)
+ Console.WriteLine("такого числа нет");
+ else
+ {
+ object c = array.GetValue(a,b);
+ Console.WriteLine(c);   
+ }            */ 
+/*
+Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.  */
+/*
+Console.WriteLine("Введите число n:");
+int n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите число m:");
+int m = Convert.ToInt32(Console.ReadLine());
+int [,]arr=new int [n, m];
+int []sum=new int [m];
+Random ran = new Random();
+
+for (int i=0; i<n; i++)
+{
+    for(int j=0; j<m; j++)
+    {
+        arr[i, j] = ran.Next(0, 100);
+
+        Console.Write(arr[i, j] + "\t");
+    }
+    Console.WriteLine();
+}
+
+for (int i=0; i<m; i++)
+{
+    for(int j=0; j<n; j++)
+    {
+        sum[i] += arr[j, i];
+    }
+}
+
+for (int i=0; i<m; i++)
+{
+    Console.Write((sum[i] / n)  + " ");
+}
+Console.ReadLine();         */
