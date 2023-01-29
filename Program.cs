@@ -1,128 +1,127 @@
-﻿/*Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+﻿//Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
 
-m = 3, n = 4.
+//[345, 897, 568, 234] -> 2
+/*Console.WriteLine("Введите размер массива");
+int size = Convert.ToInt32(Console.ReadLine());
 
-0,5 7 -2 -0,2
+int[] numbers = new int[size];
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("Вот наш массив: ");
+ShowArray(numbers);
 
-1 -3,3 8 -9,9
+int count = 0;
+for (int i = 0; i < numbers.Length; i++)
+if (numbers[i] % 2 == 0)
+count++;
 
-8 7,8 -7,1 9  */
-/*
+Console.WriteLine($"всего {numbers.Length} чисел, {count} из них чётные");
 
-void CreatArray(double[,] array)
+void FillArrayRandomNumbers(int[] numbers)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    for(int i = 0; i < numbers.Length; i++)
     {
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            array[i, j] = Convert.ToDouble(new Random().Next(-100, 100)) / 10;
-        }
+        numbers[i] = new Random().Next (100,1000);
     }
 }
-
-void ShowArray(double[,] array)
+void ShowArray(int[] numbers)
 {
-    for (int i = 0; i < array.GetLength(0); i++)
+    Console.Write("[ ");
+    for(int i = 0; i < numbers.Length; i++)
     {
-        Console.Write("[ ");
-        for (int j = 0; j < array.GetLength(1); j++)
-        {
-            Console.Write(array[i, j] + " ");
-        }
-        Console.Write("]");
-        Console.WriteLine("");
+        Console.Write(numbers[i] + " ");
     }
-}
-Console.WriteLine("введите количество строк");
-int rows = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("введите количество столбцов");
-int cols = Convert.ToInt32(Console.ReadLine());
-double[,] array = new double[rows, cols];
-CreatArray(array);
-ShowArray(array);
-*/
+    Console.Write("]");
+    Console.WriteLine();
+}  */
 
-/*Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
-Например, задан массив:
 
-1 4 7 2
 
-5 9 2 3
+//Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
-8 4 2 4
+//[3, 7, 23, 12] -> 19
 
-1 7 -> числа с такими индексами в массиве нет */
-
+//[-4, -6, 89, 6] -> 0
 /*
-Console.WriteLine("Введите размер строка");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите размер столбца");
-Console.WriteLine();
-int n = Convert.ToInt32(Console.ReadLine());
-int[,] array = new int[m, n];
- 
-for (int i = 0; i < array.GetLength(0); i++) 
-{
-    for (int j = 0; j < array.GetLength(1); j++)
-        array [i, j] = Convert.ToInt32(new Random().Next(0,21));  
-}
- 
-for (int i = 0; i < array.GetLength(0); i++) 
-{
-    for (int j = 0; j < array.GetLength(1); j++)
-        Console.Write(array[i,j] + "\t  ");
-        Console.WriteLine();
-}
- 
- Console.WriteLine("Введите координаты");
- int a = Convert.ToInt32(Console.ReadLine());
- int b = Convert.ToInt32(Console.ReadLine());
- if (a>m && b>n)
- Console.WriteLine("такого числа нет");
- else
- {
- object c = array.GetValue(a,b);
- Console.WriteLine(c);   
- }            */ 
-/*
-Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-
-Например, задан массив:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.  */
-/*
-Console.WriteLine("Введите число n:");
-int n = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите число m:");
-int m = Convert.ToInt32(Console.ReadLine());
-int [,]arr=new int [n, m];
-int []sum=new int [m];
-Random ran = new Random();
-
-for (int i=0; i<n; i++)
-{
-    for(int j=0; j<m; j++)
-    {
-        arr[i, j] = ran.Next(0, 100);
-
-        Console.Write(arr[i, j] + "\t");
+int [] CreateArray(int size, int minValue, int maxValue){
+    int [] array = new int[size];
+    for(int i=0; i<size; i++){
+        array[i] = new Random().Next(minValue, maxValue+1);
     }
+    return array;
+}
+
+void ShowArray(int [] array){
+    Console.Write("[ ");
+    for(int i = 0; i<array.Length; i++){
+        Console.Write($"{array[i]} ");
+    }
+    Console.Write("]");
     Console.WriteLine();
 }
 
-for (int i=0; i<m; i++)
-{
-    for(int j=0; j<n; j++)
-    {
-        sum[i] += arr[j, i];
-    }
-}
 
-for (int i=0; i<m; i++)
-{
-    Console.Write((sum[i] / n)  + " ");
+int CountNumberSegment(int [] array){
+    int summ = 0;
+    for(int i = 0; i< array.Length; i++){
+       if(array[i] %2 !=0)
+       summ += array[i];
+            
+    }
+    return summ;
 }
-Console.ReadLine();         */
+int size = 10;
+int min = -1;
+int max = 99;
+int [] createdArray = CreateArray(size, min, max);
+Console.WriteLine("Here is our array");
+ShowArray(createdArray);
+Console.WriteLine($"Sum is negative numbers: {CountNumberSegment(createdArray)}");   */
+
+
+//Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+//[3 7 22 2 78] -> 76
+int Find_Min_Max_diff(int[] array)
+            {
+                int result = 0;
+                int min = 0;
+                int max = 0;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    if (array[min] > array[i])
+                        min = i;
+                    else if (array[max] < array[i])
+                        max = i;
+                }
+                Console.WriteLine("min= " + array[min] + "\tmax= " + array[max]);
+                if (array[min] > array[max])
+                    result = array[min] - array[max];
+                else if (array[max] > array[min])
+                    result = array[max] - array[min];
+                return result;
+            }
+            Console.Write("введите размер массива: ");
+            int size = Convert.ToInt32(Console.ReadLine());
+            int[] array = new int[size];
+            Console.Write("введите минимальное значение: ");
+            int Min = Convert.ToInt32(Console.ReadLine());
+            Console.Write("введите максимальное значение: ");
+            int Max = Convert.ToInt32(Console.ReadLine());
+            int temp = 0;
+            if (Min > Max)
+            {
+                temp = Max;
+                Max = Min;
+                Min = temp;
+            }
+            Random rand = new Random();
+            for (int i = 0; i < array.Length; i++)
+                array[i] = rand.Next(Min, Max);
+            for (int i = 0; i < array.Length; i++)
+                Console.Write(array[i] + "\t");
+            
+
+            Console.WriteLine("разница между минимальным и максимальным элементом массива=" + Find_Min_Max_diff(array));
+  
