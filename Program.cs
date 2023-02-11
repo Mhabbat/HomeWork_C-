@@ -16,15 +16,24 @@ ShowNums(9);
 
 M = 1; N = 15 -> 120
 M = 4; N = 8. -> 30*/
-
 /*
-int ShowNums(int numM,int numN)
-{
-  if(numN != numM) return ShowNums(numN /10) + numN % 10;
-else return numM;
-}
- 
- ShowNums(3,4); */
+int CalculateSumm(int m, int n)
+		{
+			int start = m;
+			int end = n;
+			if(m > n)
+			{
+				start = n;
+				end = m;
+			}
+			return (end + start)*(end - start + 1)/2; // по формуле суммы членов арифметической прогрессии
+		}
+		Console.Write("Enter your m number: ");
+        int m = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter your n number: ");
+        int n = Convert.ToInt32(Console.ReadLine());
+		Console.WriteLine(CalculateSumm(m,n));
+*/
 
 /* Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 m = 2, n = 3 -> A(m,n) = 9
