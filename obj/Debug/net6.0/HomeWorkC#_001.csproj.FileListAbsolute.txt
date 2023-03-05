@@ -1,0 +1,15 @@
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\bin\Debug\net6.0\HomeWorkC#_001.exe
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\bin\Debug\net6.0\HomeWorkC#_001.deps.json
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\bin\Debug\net6.0\HomeWorkC#_001.runtimeconfig.json
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\bin\Debug\net6.0\HomeWorkC#_001.dll
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\bin\Debug\net6.0\HomeWorkC#_001.pdb
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.csproj.AssemblyReference.cache
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.AssemblyInfoInputs.cache
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.AssemblyInfo.cs
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.dll
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\refint\HomeWorkC#_001.dll
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.pdb
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\HomeWorkC#_001.genruntimeconfig.cache
+C:\Users\lenovo\OneDrive\Рабочий стол\HomeWork_C#\HomeWorkC#_001\obj\Debug\net6.0\ref\HomeWorkC#_001.dll
